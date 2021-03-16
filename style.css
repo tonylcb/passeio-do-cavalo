@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+body {
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ height: 100vh;
+ background: #353433;
+ font-family: 'Poppins', sans-serif;
+ color: #fff;
+}
+
+main {
+
+  display: grid;
+  justify-content: center;
+  grid-template:
+  "form form" 60px
+  "aside table" 1fr
+  "footer footer" 20px
+  / 12px 1fr;
+}
+
+header {
+  grid-area:form;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  background: #d2702b;
+  padding: 20px;
+  margin-bottom: .7rem;
+  margin-left: 12px;
+  border-radius: 10px;
+}
+
+aside {
+  grid-area: aside;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-right: 0.1rem;
+}
+
+table {
+  grid-area: table;
+  width: 450px;
+  height: 450px;
+}
+
+footer {
+  grid-area: footer;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 450px;
+  margin-left: 12px;
+}
+
+tr:nth-child(odd) td:nth-child(odd), tr:nth-child(even) td:nth-child(even) {
+  background: #8c9440;
+  position: relative;
+
+}
+
+td {
+  border-collapse: collapse;
+  color: black;
+  text-align: center;
+}
+
+tr:nth-child(odd) td:nth-child(even), tr:nth-child(even) td:nth-child(odd) {
+  background: #f6ebd4;
+  width: 40px;
+  height: 40px;
+  position: relative;
+}
+
+input {
+  padding: 6px 5px;
+  background: #d89566;
+  color: #fff;
+}
+
+::-webkit-input-placeholder {
+  color: #fff;
+}
+
+button {
+ font-family: 'Poppins', sans-serif;
+ background: #f6ebd4;
+ border: none;
+ border-radius: 3px;
+ padding: 4px 10px;
+ cursor: pointer;
+}
+
+.position-box input{
+  max-width: 50px;
+  border: 1px solid grey;
+  border-radius: 2px;
+}
+
