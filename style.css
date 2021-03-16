@@ -8,10 +8,11 @@ body {
  background: #353433;
  font-family: 'Poppins', sans-serif;
  color: #fff;
+
 }
 
 main {
-
+  box-sizing: border-box;
   display: grid;
   justify-content: center;
   grid-template:
@@ -54,7 +55,6 @@ footer {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  width: 450px;
   margin-left: 12px;
 }
 
@@ -72,8 +72,6 @@ td {
 
 tr:nth-child(odd) td:nth-child(even), tr:nth-child(even) td:nth-child(odd) {
   background: #f6ebd4;
-  width: 40px;
-  height: 40px;
   position: relative;
 }
 

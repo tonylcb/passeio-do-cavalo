@@ -53,7 +53,7 @@ const solve = (bo, col, row, counter) => {
 const getMovement = () => {
   boardOnScreen.forEach((row) => {
     for (let i = 0; i < 8; i++) {
-      if (row[i].id === input.value) {
+      if (row[i].id === input.value.toLowerCase()) {
         const indexRow = boardOnScreen.indexOf(row);
 
         const firstMoveScrn = (boardOnScreen[indexRow][i].innerHTML = '');
@@ -69,18 +69,16 @@ const getMovement = () => {
 };
 
 // Selecionar objeto armazenado no localStorage
-const teste = JSON.parse(localStorage.getItem('data'));
+const getSolve = JSON.parse(localStorage.getItem('data'));
 
 // Levar os valores dos movimentos salvos no localStorage para o HTML e console
 if (localStorage.length > 0) {
-  teste.board.forEach((row) => {
+  getSolve.board.forEach((row) => {
     for (let i = 0; i < 8; i++) {
       if (row[i] != 0) {
-        const indexRow = teste.board.indexOf(row);
+        const indexRow = getSolve.board.indexOf(row);
         console.log(boardOnScreen[indexRow][i].outerHTML.substring(8, 10));
-        boardOnScreen[indexRow][
-          i
-        ].innerHTML = `<span class="numbers">${row[i]}<span>`;
+        boardOnScreen[indexRow][i].innerHTML = row[i];
       }
     }
   });
