@@ -8,7 +8,7 @@ body {
  background: #353433;
  font-family: 'Poppins', sans-serif;
  color: #fff;
-
+ font-size: 1rem;
 }
 
 main {
@@ -23,11 +23,16 @@ main {
 }
 
 header {
+  width: 100%;
+}
+
+form {
   grid-area:form;
   display: flex;
-  flex-direction: row;
+  flex-flow: row nowrap;
   align-items: center;
   justify-content: center;
+  width: auto;
   gap: 4px;
   background: #d2702b;
   padding: 20px;
@@ -47,7 +52,9 @@ aside {
 table {
   grid-area: table;
   width: 450px;
-  height: 450px;
+  height: 450px;  
+  border-collapse: collapse;
+  border: 3px solid #fff;
 }
 
 footer {
@@ -60,25 +67,27 @@ footer {
 
 tr:nth-child(odd) td:nth-child(odd), tr:nth-child(even) td:nth-child(even) {
   background: #8c9440;
-  position: relative;
-
 }
 
 td {
-  border-collapse: collapse;
   color: black;
   text-align: center;
+  margin: 0;
+  padding: 0;
+  width: 20px;
+  height: 20px;
+  border: 1px solid white;
 }
 
 tr:nth-child(odd) td:nth-child(even), tr:nth-child(even) td:nth-child(odd) {
   background: #f6ebd4;
-  position: relative;
 }
 
 input {
   padding: 6px 5px;
   background: #d89566;
   color: #fff;
+  font-family: 'Poppins', sans-serif;
 }
 
 ::-webkit-input-placeholder {
@@ -100,3 +109,44 @@ button {
   border-radius: 2px;
 }
 
+@media(max-width: 560px) {
+  table {
+    width: 350px;
+    height: 350px;
+  }
+}
+
+@media(max-width: 440px) {
+
+  body {
+    font-size: .7rem;
+  }
+  main {
+    grid-template:
+    "form form" 40px
+    "aside table" 1fr
+    "footer footer" 20px
+  }
+  table {
+    width: 300px;
+    height: 300px;
+  }
+  form {
+    width: 28px;
+    gap: 4px;
+    background: #d2702b;
+    padding: 7px;
+    margin-bottom: .3rem;
+    margin-left: 12px;
+    border-radius: 5px;
+  }
+  button {
+    font-size: .7rem;
+   }
+   input {
+    padding: 3px 5px;
+  }
+   ::-webkit-input-placeholder {
+    font-size: .7rem;
+  }
+}
